@@ -8,10 +8,23 @@ namespace LemonadeStand
 {
     internal class Day
     {
-        public List<Customer> customers;
+        List<Customer> customers;   
         public Weather weather;
-        WeatherGenerator Weather { get; set; }
-        List<Customer> customers { get; set; }
+
+        public Day() 
+        
+        {
+
+            Weather weather = new Weather();
+
+            string randomWeather = weather.GenerateRandomWeather();
+            Console.WriteLine("Random Weather: " + randomWeather);
+
+            string forecastedWeather = weather.GenerateForecastedWeather();
+            Console.WriteLine("Forecasted Weather: " + forecastedWeather);
+
+
+        }
 
     }
 }

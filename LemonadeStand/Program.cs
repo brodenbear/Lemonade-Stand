@@ -1,4 +1,4 @@
-﻿using static LemonadeStand.WeatherGenerator;
+﻿using static LemonadeStand.Weather;
 
 namespace LemonadeStand
 {
@@ -6,14 +6,24 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
+            int days = 0;
+            if (days > 8)
             {
-                WeatherGenerator weatherGenerator = new WeatherGenerator();
 
-                string randomWeather = weatherGenerator.GenerateRandomWeather();
-                Console.WriteLine("Actual Weather: " + randomWeather);
 
-                string forecastedWeather = weatherGenerator.GenerateForecastedWeather();
-                Console.WriteLine("Forecasted Weather: " + forecastedWeather);
+
+                days++;
+            }
+            else 
+            {
+                days = 8;
+            
+            
+            
+            }
+            {
+
+ 
             }
         }
     }

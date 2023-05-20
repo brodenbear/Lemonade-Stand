@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LemonadeStand
 {
-    internal class WeatherGenerator
+    internal class Weather
     {
         public string condition;
         public int temperature;
@@ -17,7 +17,7 @@ namespace LemonadeStand
         private Random random;
         private Random forecastRandom;
 
-        public WeatherGenerator()
+        public Weather()
         {
             weatherConditions = new List<string>
         {
@@ -46,7 +46,7 @@ namespace LemonadeStand
             }
             else // 20% chance of different weather in forecast
             {
-                return GenerateRandomWeather();
+                return GenerateForecastedWeather();
             }
         }
     }
