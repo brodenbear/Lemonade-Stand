@@ -6,25 +6,9 @@ namespace LemonadeStand
     {
         static void Main(string[] args)
         {
-            int days = 0;
-            if (days > 8)
-            {
-
-
-
-                days++;
-            }
-            else 
-            {
-                days = 8;
-            
-            
-            
-            }
-            {
-
- 
-            }
+            Game game = new Game();
+            game.RequestName();
+           
         }
     }
 }

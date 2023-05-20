@@ -14,17 +14,16 @@ namespace LemonadeStand
         public Day() 
         
         {
-
             Weather weather = new Weather();
 
             string randomWeather = weather.GenerateRandomWeather();
-            Console.WriteLine("Random Weather: " + randomWeather);
+            Console.WriteLine("Today's Weather: " + randomWeather);
 
             string forecastedWeather = weather.GenerateForecastedWeather();
             Console.WriteLine("Forecasted Weather: " + forecastedWeather);
 
-
+            }               
         }
 
     }
-}
+

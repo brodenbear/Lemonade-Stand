@@ -8,9 +8,10 @@ namespace LemonadeStand
 {
     internal class Customer
     {
+
         public Customer() 
         { 
-        
+
         }
     }
 }

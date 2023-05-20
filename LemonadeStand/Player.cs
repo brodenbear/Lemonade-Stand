@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,11 @@ namespace LemonadeStand
         }
 
         // member methods (CAN DO)
-
+        
+        public void RequestName()
+        {
+            Console.WriteLine("What is your name?");
+            name = Console.ReadLine();
+        }
     }
 }
