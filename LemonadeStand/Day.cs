@@ -8,7 +8,10 @@ namespace LemonadeStand
 {
     internal class Day
     {
+        public List<Customer> customers;
+        public Weather weather;
         WeatherGenerator Weather { get; set; }
         List<Customer> customers { get; set; }
+
     }
 }

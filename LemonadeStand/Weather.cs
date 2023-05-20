@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,9 @@ namespace LemonadeStand
 {
     internal class WeatherGenerator
     {
-
-
+        public string condition;
+        public int temperature;
+        public string predictedForecast;
 
         private List<string> weatherConditions;
         private Random random;
