@@ -3,27 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static LemonadeStand.Weather;
 
 namespace LemonadeStand
 {
     internal class Day
     {
-        List<Customer> customers;   
+        List<Customer> customers = new List<Customer>();
         public Weather weather;
+        public Day()
 
-        public Day() 
-        
         {
             Weather weather = new Weather();
+            TemperatureGenerator temperatureGenerator = new TemperatureGenerator();
+         
 
-            string randomWeather = weather.GenerateRandomWeather();
-            Console.WriteLine("Today's Weather: " + randomWeather);
+            temperatureGenerator.GenerateRandomTemperature();
+            Console.WriteLine("Random Temperature: " + temperatureGenerator + " degrees");
 
-            string forecastedWeather = weather.GenerateForecastedWeather();
-            Console.WriteLine("Forecasted Weather: " + forecastedWeather);
 
-            }               
+            weather.GenerateRandomWeather();
+
+            Console.WriteLine("Today's Weather: " + weather);
+
+            weather.GenerateForecastedWeather();
+
+            Console.WriteLine("Forecasted Weather: " + weather);
+
+           
+
         }
+        
 
     }
+}
 

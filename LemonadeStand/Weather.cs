@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,8 +18,10 @@ namespace LemonadeStand
         private Random random;
         private Random forecastRandom;
 
+
         public Weather()
         {
+
             weatherConditions = new List<string>
         {
             "raining",
@@ -30,13 +33,20 @@ namespace LemonadeStand
 
             random = new Random();
             forecastRandom = new Random();
+            TemperatureGenerator temperatureGenerator = new TemperatureGenerator();
+            temperature = temperatureGenerator.GenerateRandomTemperature();
+
         }
+       
+
+        
 
         public string GenerateRandomWeather()
         {
             int index = random.Next(weatherConditions.Count);
             return weatherConditions[index];
         }
+
 
         public string GenerateForecastedWeather()
         {
@@ -48,7 +58,12 @@ namespace LemonadeStand
             {
                 return GenerateForecastedWeather();
             }
+
+
+
         }
+        
+
     }
 
 }
