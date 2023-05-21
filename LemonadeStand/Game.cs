@@ -28,6 +28,8 @@ namespace LemonadeStand
             currentDay = 0;
         if ( currentDay <= 7 ) 
             { 
+                Day day = new Day();
+                day.StartDay();
                 currentDay++;
             }
         else

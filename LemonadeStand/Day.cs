@@ -15,25 +15,28 @@ namespace LemonadeStand
 
         {
             Weather weather = new Weather();
+           
+        }
+        public void StartDay() 
+        {
+            Weather weather = new Weather();
             TemperatureGenerator temperatureGenerator = new TemperatureGenerator();
-         
+            WeatherGenerator weatherGenerator = new WeatherGenerator();
 
             temperatureGenerator.GenerateRandomTemperature();
-            Console.WriteLine("Random Temperature: " + temperatureGenerator + " degrees");
+            Console.WriteLine("Random Temperature: " + weather.temperature + " degrees");
+
+            weatherGenerator.GenerateForecastedWeather();
+
+            Console.WriteLine("Forecasted Weather: " + weather.condition);
+
+            weatherGenerator.GenerateRandomWeather();
+
+            Console.WriteLine("Today's Weather: " + weather.condition);
 
 
-            weather.GenerateRandomWeather();
-
-            Console.WriteLine("Today's Weather: " + weather);
-
-            weather.GenerateForecastedWeather();
-
-            Console.WriteLine("Forecasted Weather: " + weather);
-
-           
 
         }
-        
 
     }
 }

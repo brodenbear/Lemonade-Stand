@@ -8,10 +8,14 @@ namespace LemonadeStand
 {
     internal class Customer
     {
+        public int PurchaseChance;
 
-        public Customer() 
-        { 
+        public Customer()
+        {
+             
 
         }
+        
+        
     }
 }

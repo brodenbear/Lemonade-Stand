@@ -13,51 +13,24 @@ namespace LemonadeStand
         public string condition;
         public int temperature;
         public string predictedForecast;
-
-        private List<string> weatherConditions;
-        private Random random;
-        private Random forecastRandom;
-
-
+ 
         public Weather()
         {
 
-            weatherConditions = new List<string>
-        {
-            "raining",
-            "cloudy",
-            "snowing",
-            "clear",
-            "hot"
-        };
-
-            random = new Random();
-            forecastRandom = new Random();
+            WeatherGenerator weatherGenerator = new WeatherGenerator();
             TemperatureGenerator temperatureGenerator = new TemperatureGenerator();
+
             temperature = temperatureGenerator.GenerateRandomTemperature();
 
+            condition = weatherGenerator.GenerateRandomWeather();
+
+            predictedForecast = weatherGenerator.GenerateForecastedWeather();
         }
        
 
         
 
-        public string GenerateRandomWeather()
-        {
-            int index = random.Next(weatherConditions.Count);
-            return weatherConditions[index];
-        }
-
-
-        public string GenerateForecastedWeather()
-        {
-            if (forecastRandom.Next(10) < 8) // 80% chance of mostly accurate forecast
-            {
-                return GenerateRandomWeather();
-            }
-            else // 20% chance of different weather in forecast
-            {
-                return GenerateForecastedWeather();
-            }
+       
 
 
 
@@ -66,5 +39,5 @@ namespace LemonadeStand
 
     }
 
-}
+
 
