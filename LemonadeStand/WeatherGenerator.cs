@@ -19,7 +19,7 @@ namespace LemonadeStand
         {
             "raining",
             "cloudy",
-            "snowing",
+            "hazy",
             "clear",
             "hot"
          
@@ -29,8 +29,29 @@ namespace LemonadeStand
         }
         public string GenerateRandomWeather()
         {
-            int index = random.Next(weatherConditions.Count);
-            return weatherConditions[index];
+            TemperatureGenerator temperatureGenerator = new TemperatureGenerator();
+            int temperature = temperatureGenerator.GenerateRandomTemperature();
+
+            if (temperature <= 22) 
+            { 
+            return weatherConditions[2];
+            }
+            else if (temperature > 22 && temperature <= 45)
+            { 
+                return weatherConditions[0];
+            }
+            else if (temperature > 45 && temperature <= 60)
+            {
+                return weatherConditions[1];
+            }
+            else if (temperature > 60 && temperature <= 75)
+            {
+                return weatherConditions[3];                           
+            }
+            else 
+            {
+                return weatherConditions[4];
+            }
         }
 
 

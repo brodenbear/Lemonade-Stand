@@ -14,7 +14,7 @@ namespace LemonadeStand
         public Day()
 
         {
-            Weather weather = new Weather();
+
            
         }
         public void StartDay() 
@@ -28,7 +28,7 @@ namespace LemonadeStand
 
             weatherGenerator.GenerateForecastedWeather();
 
-            Console.WriteLine("Forecasted Weather: " + weather.condition);
+            Console.WriteLine("Forecasted Weather: " + weather.predictedForecast);
 
             weatherGenerator.GenerateRandomWeather();
 
