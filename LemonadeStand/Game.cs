@@ -19,7 +19,7 @@ namespace LemonadeStand
             this.currentDay = 0;
             for (int i = 0; i < 8; i++)
             {
-                weather.DisplayCurrentDay();
+                weather.DisplayCurrentDay(); 
                 StartGame();
             }
             Console.WriteLine($"Congratulations{player.name}! You have won the week with a total of {player.wallet.Money}!");
@@ -30,6 +30,7 @@ namespace LemonadeStand
             PurchaseStore();
             player.recipe.DisplayRecipe();
             player.recipe.ChangeRecipe();
+            UserInterface.GetNumberOfPitchers();
             SellLemons();
             this.currentDay++;
                           

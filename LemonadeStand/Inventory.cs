@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,21 +68,25 @@ namespace LemonadeStand
         {
             for (int i = 0; i < numberOfCups; i++)
             {
-                Cup cup = new Cup();
-                cups.Remove(cup);
+                cups.Remove(cups[0]);
             }
+       
             for (int i = 0;i < numberOfIceCubes; i++) 
             {
-                IceCube iceCube = new IceCube(); iceCubes.Remove(iceCube);
+                iceCubes.Remove(iceCubes[0]);
             }
-            for (int i = 0;i<numberOfSugarCubes; i++) 
-            { 
-                SugarCube sugarCube = new SugarCube(); sugarCubes.Remove(sugarCube); 
+            if (sugarCubes.Count > numberOfSugarCubes)
+            {
+                for (int i = 0; i < numberOfSugarCubes; i++)
+                {
+                    sugarCubes.Remove(sugarCubes[0]);
+                }
             }
+            else
+                Console.WriteLine("number of sugar cubes stayed the same, you do not have enough");
             for (int i = 0; i<numberOfLemons; i++)
             {
-                Lemon lemon = new Lemon();
-                lemons.Remove(lemon);
+                lemons.Remove(lemons[0]);
             }
        
         }

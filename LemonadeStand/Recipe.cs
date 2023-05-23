@@ -32,9 +32,9 @@ namespace LemonadeStand
         }
         public void ChangeRecipe()
         {
-            int lemonFromInventory = 0;
-            int sugarCubeFromInventory = 0;
-            int iceCubeFromInventory = 0;
+            int lemonFromInventory = numberOfLemons;
+            int sugarCubeFromInventory = numberOfSugarCubes;
+            int iceCubeFromInventory = numberOfIceCubes;
             int cupFromInventory = 0;
             Inventory inventory = new Inventory();
             {
@@ -71,7 +71,7 @@ namespace LemonadeStand
 
                 while (!userInputIsAnInteger || quantityOfItem < 0)
                 {
-                    Console.WriteLine($"Each pitcher has {numberOfIceCubes} sugar cubes. How many ice cubes would you like to have in your recipe?");
+                    Console.WriteLine($"Each pitcher has {numberOfIceCubes} ice cubes. How many ice cubes would you like to have in your recipe?");
 
                     userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
                 }
@@ -85,7 +85,7 @@ namespace LemonadeStand
 
                 while (!userInputIsAnInteger || quantityOfItem < 0)
                 {
-                    Console.WriteLine($"Each pitcher costs ${price}. How much would you like to sell each pitcher for?");
+                    Console.WriteLine($"Each cup costs ${price}. How much would you like to sell each cup for?");
 
                     userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
                 }
