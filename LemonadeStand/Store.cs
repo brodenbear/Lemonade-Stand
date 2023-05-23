@@ -23,6 +23,10 @@ namespace LemonadeStand
             pricePerCup = .25;
         }
 
+        public void WelcomeToStore(Player player)
+        {
+            Console.WriteLine($"\nWelcome to the store, {player.name}! You have ${player.wallet.Money} to spend\n");
+        }
         // member methods (CAN DO)
         public void SellLemons(Player player)
         {

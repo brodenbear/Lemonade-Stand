@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +11,10 @@ namespace LemonadeStand
     class Player
     {
         // member variables (HAS A)
-        public string name;
         public Inventory inventory;
         public Wallet wallet;
         public Recipe recipe;
+        public string name;
 
         // constructor (SPAWNER)
         public Player()
@@ -21,14 +22,19 @@ namespace LemonadeStand
             inventory = new Inventory();
             wallet = new Wallet();
             recipe = new Recipe();
+            name = ProvideName();
         }
 
         // member methods (CAN DO)
-        
-        public void RequestName()
+        public string ProvideName()
         {
-            Console.WriteLine("What is your name?");
-            name = Console.ReadLine();
-        }
+            Console.WriteLine("Please enter your name");
+            return Console.ReadLine();
+        } 
     }
+        
 }
+    
+            
+
+

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace LemonadeStand
         public int numberOfLemons;
         public int numberOfSugarCubes;
         public int numberOfIceCubes;
-        public double price;
+        public int price;
 
 
         // constructor (SPAWNER)
@@ -29,6 +30,71 @@ namespace LemonadeStand
         {
             Console.WriteLine($"Your recipe currently consists of:\n{numberOfLemons} lemons per pitcher\n{numberOfSugarCubes} sugar cubes per pitcher\n{numberOfIceCubes} ice cubes per pitcher");
         }
+        public void ChangeRecipe()
+        {
+            int lemonFromInventory = 0;
+            int sugarCubeFromInventory = 0;
+            int iceCubeFromInventory = 0;
+            int cupFromInventory = 0;
+            Inventory inventory = new Inventory();
+            {
+                bool userInputIsAnInteger = false;
+                int quantityOfItem = -1;
 
-    }
+                while (!userInputIsAnInteger || quantityOfItem < 0)
+                {
+                    Console.WriteLine($"Each pitcher has {numberOfLemons} lemons. How many lemons would you like to have in your recipe?");
+
+                    userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
+                }
+
+                numberOfLemons = quantityOfItem;
+                lemonFromInventory += quantityOfItem;
+            }
+            {
+                bool userInputIsAnInteger = false;
+                int quantityOfItem = -1;
+
+                while (!userInputIsAnInteger || quantityOfItem < 0)
+                {
+                    Console.WriteLine($"Each pitcher has {numberOfSugarCubes} sugar cubes. How many sugar cubes would you like to have in your recipe?");
+
+                    userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
+                }
+
+                numberOfSugarCubes = quantityOfItem;
+                sugarCubeFromInventory += quantityOfItem;
+            }
+            {
+                bool userInputIsAnInteger = false;
+                int quantityOfItem = -1;
+
+                while (!userInputIsAnInteger || quantityOfItem < 0)
+                {
+                    Console.WriteLine($"Each pitcher has {numberOfIceCubes} sugar cubes. How many ice cubes would you like to have in your recipe?");
+
+                    userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
+                }
+
+                numberOfIceCubes = quantityOfItem;
+                iceCubeFromInventory += quantityOfItem;
+            }
+            {
+                bool userInputIsAnInteger = false;
+                int quantityOfItem = -1;
+
+                while (!userInputIsAnInteger || quantityOfItem < 0)
+                {
+                    Console.WriteLine($"Each pitcher costs ${price}. How much would you like to sell each pitcher for?");
+
+                    userInputIsAnInteger = Int32.TryParse(Console.ReadLine(), out quantityOfItem);
+                }
+
+                price = quantityOfItem;
+                cupFromInventory += 8;
+                inventory.RecipeChosen(cupFromInventory, iceCubeFromInventory, sugarCubeFromInventory, lemonFromInventory);
+            }
+          
+        }
+     }
 }
